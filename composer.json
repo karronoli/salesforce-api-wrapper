@@ -1,13 +1,13 @@
 {
-  "name": "napp/salesforce-api",
+  "name": "karronoli/salesforce-api",
   "description": "A library for interacting with the Salesforce REST API and managing the OAuth flow",
   "keywords": ["salesforce", "rest", "api", "oauth2"],
-  "homepage": "https://github.com/napp/salesforce-api-wrapper",
+  "homepage": "https://github.com/karronoli/salesforce-api-wrapper",
   "license": "MIT",
   "authors": [
     {
-      "name": "Michael Lundbøl",
-      "email": "ml@napp.dk"
+      "name": "Tomokazu Kagawa",
+      "email": "karo+git@karonori.com"
     }
   ],
   "require": {
@@ -25,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Napp\\Salesforce\\": "src/"
+      "karronoli\\Salesforce\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Napp\\Salesforce\\Tests\\": "tests/"
+      "Karronoli\\Salesforce\\Tests\\": "tests/"
     },
     "files": [
       "tests/bootstrap.php"
