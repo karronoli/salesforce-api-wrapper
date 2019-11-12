@@ -8,7 +8,7 @@ class RequestException extends \Exception
 {
 
     /**
-     * @var string
+     * @var string|integer
      */
     protected $errorCode;
 
@@ -56,9 +56,9 @@ class RequestException extends \Exception
     }
 
     /**
-     * @return string
+     * @return string|integer
      */
-    public function getErrorCode(): string
+    public function getErrorCode()
     {
         return $this->errorCode;
     }
