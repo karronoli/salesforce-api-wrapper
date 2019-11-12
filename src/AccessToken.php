@@ -1,6 +1,6 @@
 <?php
 
-namespace Napp\Salesforce;
+namespace Karronoli\Salesforce;
 
 use Carbon\Carbon;
 
@@ -79,11 +79,11 @@ class AccessToken
 
     /**
      * @param array $response
-     * @return \Napp\Salesforce\AccessToken
+     * @return \Karronoli\Salesforce\AccessToken
      */
     public function refresh(array $response): self
     {
-        $this->dateIssued = Carbon::createFromTimestamp($response['issued_at']);
+        $this->dateIssued = Carbon::createFromTimestampMs($response['issued_at']);
 
         $this->dateExpires = $this->dateIssued->copy()->addHour()->subMinutes(5);
 
@@ -131,7 +131,7 @@ class AccessToken
 
     /**
      * @param array $array
-     * @return \Napp\Salesforce\AccessToken
+     * @return \Karronoli\Salesforce\AccessToken
      */
     public static function fromArray(array $array): self
     {

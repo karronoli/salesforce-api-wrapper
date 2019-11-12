@@ -1,6 +1,6 @@
 <?php
 
-namespace Napp\Salesforce\Exceptions;
+namespace Karronoli\Salesforce\Exceptions;
 
 use Throwable;
 
@@ -8,7 +8,7 @@ class RequestException extends \Exception
 {
 
     /**
-     * @var string
+     * @var string|integer
      */
     protected $errorCode;
 
@@ -41,7 +41,7 @@ class RequestException extends \Exception
 
     public static function withoutResponseError($message, Throwable $previous, int $code = 0): self
     {
-        $self = new self($message, $previous, $code);
+        $self = new self($message, $code, $previous);
         $self->errorCode = 500;
 
         return $self;
@@ -56,9 +56,9 @@ class RequestException extends \Exception
     }
 
     /**
-     * @return string
+     * @return string|integer
      */
-    public function getErrorCode(): string
+    public function getErrorCode()
     {
         return $this->errorCode;
     }
